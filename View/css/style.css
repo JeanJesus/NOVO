@@ -1,0 +1,40 @@
+.fundo{
+  background-image: url('../img/Background_Login.jpg');
+
+}
+
+.log_css{
+  background-image: url("../img/Background_Login.jpg");
+  background-size: cover;
+}
+.hello_user{
+  color: white;
+}
+
+h11 {
+    color:red;
+}
+
+#logo {
+        width:50%;
+        height:50%;
+}
+
+.panel-heading{
+    font-size:150%;
+}
+.TODOFORM{
+  display: inline;
+}
+#page-to{
+  background-image: url("../img/Background_Login.jpg");
+  background-size: cover;
+  repeat: no;
+}
+.container-fluid{
+  background-color: white;
+  margin-left: 2%;
+  margin-left: 2%;
+
+
+}
