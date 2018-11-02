@@ -10,14 +10,14 @@
           <!-- inicio de formulario para cadastro de advogados -->
 
 <div>
-  <form>
+    <form method="post" action="../Controller/getDadosAdvogado.php">
   <div class="outside">
   <div class="container-fluid"><br />
     <div class="inside">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Nome:</label>
-      <input type="text" class="form-control" id="inputEmail4" placeholder="Nome Completo">
+      <input type="text" name="NomeAdv"class="form-control" id="inputEmail4" placeholder="Nome">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">CPF:</label>
@@ -42,7 +42,7 @@
 
     <div class="form-group col-md-3">
       <label for="inputAddress">Estado Civil:</label>
-      <select required id="Estado Civil" name="Estado Civil" class="form-control">
+      <select required id="Estado Civil" name="Estado_Civil" class="form-control">
          <option selected>Selecionar</option>
         <option value="Solteiro(a)">Solteiro(a)</option>
         <option value="Casado(a)">Casado(a)</option>
@@ -61,7 +61,7 @@
 
         <div class="form-group col-md-3">
           <label for="inputAddress">Seccional:</label>
-          <select  name="Uf"  class="form-control">
+          <select  name="seccional"  class="form-control">
             <option value="">Todas</option>
             <option value="AC">Conselho Seccional - Acre</option>
             <option value="AL">Conselho Seccional - Alagoas</option>
@@ -99,28 +99,30 @@
         </div>
         <div class="form-group col-md-3">
           <label for="inputEmail4">Data de Expedição:</label>
-          <input id="exped_advogado" name="dtnasc" placeholder="DD/MM/AAAA" class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+          <input id="exped_advogado" name="dtexped" placeholder="DD/MM/AAAA" class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
         </div>
         <div class="form-group col-md-3">
           <label for="inputEmail4">Data de Validade:</label>
-          <input id="validade_advogado" name="dtnasc" placeholder="DD/MM/AAAA" class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
+          <input id="validade_advogado" name="dtval" placeholder="DD/MM/AAAA" class="form-control input-md" required="" type="text" maxlength="10" OnKeyPress="formatar('##/##/####', this)" onBlur="showhide()">
         </div>
 
     </div>
-      <div class="form-group">
-        <label for="inputAddress">Área de atuação:</label>
-          <select required id="" name="Estado Civil" class="form-control">
-            <option selected>Selecione </option>
-            <option value="">Direito Empresarial</option>
-            <option value="">Direito da Tecnologia da Informação</option>
-            <option value="">Direito do Consumidor</option>
-            <option value="">Direito Contratual</option>
-            <option value="">Direito Penal</option>
-            <option value="">Direito Trabalhista</option>
-            <option value="">Direito Tributário</option>
-            <option value="">Direito Familiar</option>
-            <option value="">Outros</option>
-          </select>  <div class="form-row">
+     <div class="form-group col-md-16" align="center">
+       <div class="form-group col-md-16" align="center">
+        <label for="inputAddress">Tipo de Caso:</label>
+        <select required id="Estado Civil" name="caso" class="form-control">
+             <option >Selecione </option>
+            <option >Direito Empresarial</option>
+            <option >Direito da Tecnologia da Informação</option>
+            <option >Direito do Consumidor</option>
+            <option >Direito Contratual</option>
+            <option >Direito Penal</option>
+            <option >Direito Trabalhista</option>
+            <option >Direito Tributário</option>
+            <option >Direito Familiar</option>
+            <option >Outros</option>
+        </select>
+      </div>  <div class="form-row">
 
       </div>
 

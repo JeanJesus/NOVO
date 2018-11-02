@@ -8,15 +8,15 @@
 
 
       <!-- iniciando formulario de cadastro -->
-<form>
+      <form method="post" action="../Controller/getDadosCliente.php">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputEmail4">Nome:</label>
-        <input id="Nome" name="Nome" placeholder="" class="form-control input-md" required="" type="text">
+        <input id="Nome" name="Nome_Cliente" placeholder="" class="form-control input-md" required="" type="text">
       </div>
       <div class="form-group col-md-6">
         <label for="inputAddress">Email:</label>
-        <input type="email" class="form-control" id="inputAddress" placeholder="@email.com">
+        <input type="email" name="Email_Cliente" class="form-control" id="inputAddress" placeholder="@email.com">
       </div>
     </div>
 
@@ -35,7 +35,7 @@
       </div>
       <div class="form-group col-md-3">
         <label for="inputAddress">Estado Civil:</label>
-        <select required id="Estado Civil" name="Estado Civil" class="form-control">
+        <select required id="Estado Civil" name="Estado_Civil" class="form-control">
            <option selected>Selecionar</option>
           <option value="Solteiro(a)">Solteiro(a)</option>
           <option value="Casado(a)">Casado(a)</option>
@@ -64,7 +64,7 @@
 
   <div class="form-group col-md-7">
     <label for="inputAddress">Endereço:</label>
-    <input id="rua" name="rua" class="form-control" placeholder="" required="" readonly="readonly" type="text">
+    <input id="rua" name="endereco" class="form-control" placeholder="" required="" readonly="readonly" type="text">
   </div>
 
 
