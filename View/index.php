@@ -35,7 +35,7 @@
           <div align="center">
             <img src="img/Logo.png" width="230px" height="200px">
           </div><br />
-          <form method="POST" action="../Controller/val_login.php">
+          <form method="POST" action="../Controller/config/val_login.php">
             <div class="form-group">
               <div class="form-label-group">
                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address"  autofocus="autofocus" name="email" required>
@@ -61,8 +61,8 @@
             </div>
           </form>
           <div class="text-center">
-            <a class="d-block small mt-3" href="register.php">Register an Account</a>
-            <a class="d-block small" href="forgot-password.php">Forgot Password?</a>
+            <a class="d-block small mt-3" href="register.php" onclick="alert('Você precisa está logado para isso!');">Register an Account</a>
+            <a class="d-block small" href="forgot-password.php" onclick="alert('Entre em contato com o Administrador do sistema!');">Forgot Password?</a>
           </div>
         </div>
       </div>

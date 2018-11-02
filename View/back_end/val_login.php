@@ -4,7 +4,7 @@
 
 
     if(empty($_POST['email']) || empty($_POST['senha'])){
-      header('location: ../View/index.php');
+      header('location: ../index.php');
       exit();
     }
 
@@ -15,7 +15,7 @@
     $user_name;
 
     $query_login = "select email, senha from login where email='{$Email}' and senha = md5('$Senha')";
-
+    
 
 
     $resultado = pg_query($conn, $query_login);
@@ -26,11 +26,11 @@
 
     if($row == 1){
       $_SESSION['email'] = $Email;
-      header('location: ../View/inicial.php');
+      header('location: ../inicial.php');
       exit();
 
     }else{
-      header('location: ../View/index.php');
+      header('location: ../index.php');
 
     }
 

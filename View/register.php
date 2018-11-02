@@ -1,6 +1,5 @@
 <?php include_once('..View/verifica_login.php'); ?>
-
-<?php include_once('../Controller/verifica_login.php'); ?>
+<?php include_once('../Controller/config/verifica_login.php'); ?>
 
   <body class="bg-dark">
 

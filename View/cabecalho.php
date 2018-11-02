@@ -51,11 +51,8 @@
         <i class="fas fa-user-circle fa-fw"></i> <b class="hello_user">Olá, Jean!</b>
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-        <a class="dropdown-item" href="#">Settings</a>
-        <a class="dropdown-item" href="#">Activity Log</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="back_end/logout.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
-      </div>
+      <a class="dropdown-item" href="back_end/logout.php" data-toggle="modal" data-target="#logoutModal">Logout</a>
+    </div>
     </li>
   </ul>
 

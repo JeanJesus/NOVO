@@ -1,4 +1,4 @@
-<?php include_once('..Controller/verifica_login.php'); ?>
+<?php include_once('../Controller/config/verifica_login.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
