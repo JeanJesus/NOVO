@@ -283,3 +283,47 @@ class Agendamento{
     
     
 }
+
+class Usuario{
+    private $primeiro_nome;
+    private $segundo_nome;
+    private $email;
+    private $senha;
+    
+    public function getPrimeiro_nome() {
+        return $this->primeiro_nome;
+    }
+
+    public function getSegundo_nome() {
+        return $this->segundo_nome;
+    }
+
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function getSenha() {
+        return $this->senha;
+    }
+
+    public function setPrimeiro_nome($primeiro_nome) {
+        $this->primeiro_nome = $primeiro_nome;
+    }
+
+    public function setSegundo_nome($segundo_nome) {
+        $this->segundo_nome = $segundo_nome;
+    }
+
+    public function setEmail($email) {
+        $this->email = $email;
+    }
+
+    public function setSenha($senha) {
+        $this->senha = $senha;
+    }
+
+
+    
+    
+    
+}

@@ -15,18 +15,18 @@
       <div class="card card-register mx-auto mt-5">
         <div class="card-header" align="center">Registrar Usuário</div>
         <div class="card-body">
-          <form action="" name="f1">
+            <form action="../Controller/getDadosUser.php" method="post" name="f1">
             <div class="form-group">
               <div class="form-row">
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="text" id="firstName" class="form-control" placeholder="Primeiro Nome" required="required" autofocus="autofocus">
+                      <input type="text" id="firstName" name="primeiro_nome" class="form-control" placeholder="Primeiro Nome" required autofocus="autofocus">
                     <label for="firstName">Primeiro Nome</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="text" id="lastName" class="form-control" placeholder="Ultimo Nome" required="required">
+                    <input type="text" id="lastName" name="utlimo_nome" class="form-control" placeholder="Ultimo Nome" required>
                     <label for="lastName">Ultimo Nome:</label>
                   </div>
                 </div>
@@ -34,7 +34,7 @@
             </div>
             <div class="form-group">
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="@exemplo.com" required="required">
+                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="@exemplo.com" required>
                 <label for="inputEmail">Email:</label>
               </div>
             </div>
@@ -42,13 +42,13 @@
               <div class="form-row">
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="password" id="inputPassword" name="senha1" class="form-control" placeholder="Password" required="required">
+                    <input type="password" id="inputPassword" name="senha1" class="form-control" placeholder="Password" required>
                     <label for="inputPassword">Senha</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="password" id="confirmPassword" name="senha2" class="form-control" placeholder="Confirm password" required="required">
+                    <input type="password" id="confirmPassword" name="senha2" class="form-control" placeholder="Confirm password" required>
                     <label for="confirmPassword">Confirmação de senha</label><br />
                   </div>
                 </div>
@@ -57,7 +57,7 @@
 
                 <input type="button" class="btn btn-primary btn-block" value="Comparar Senhas" onClick="validarSenha()">
 
-            <input type="button" class="btn btn-primary btn-block" value="Registrar">
+                <input type="submit" class="btn btn-primary btn-block" value="Registrar">
           </form>
 
         </div>
