@@ -14,6 +14,6 @@
     $adv->setData_expedicao($_POST['dtexped']);
     $adv->setData_validade($_POST['dtval']);
     $adv->setArea_de_atuacao($_POST['caso']);
-    
-    echo var_dump($adv);
+    $adv->inserAdvogado($adv);
+    //echo var_dump($adv);
     

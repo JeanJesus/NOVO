@@ -51,3 +51,28 @@ if($item =="Listar_Agendamentos"){
     }else{
       include_once "../View/inicial.php";
 }
+$item = $_GET['item'];
+if($item =="Listar_Usuarios"){
+    include_once ("../View/listar_usuarios.php");
+    }else{
+      include_once "../View/inicial.php";
+}
+
+
+
+$item = $_GET['item'];
+if($item =="EditarCliente"){
+    include_once ('Editar_Cliente.php');
+    }else{
+      include_once "inicial.php";
+}
+$item = $_GET['item'];
+if($item =='EditarAdvogados'){
+    include_once ('../View/EditarAdvogados.php');
+    }else{
+      include_once "../View/inicial.php";
+}
+
+
+
+

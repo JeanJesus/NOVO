@@ -1,3 +1,4 @@
+<?php include_once('../Controller/config/verifica_login.php'); ?>
 <div id="wrapper">
 
   <!-- Sidebar -->
@@ -23,9 +24,8 @@
         <div class="dropdown-divider"></div>
         <h6 class="dropdown-header">Other Pages:</h6>
 
-        <a class="dropdown-item" href="inicial.php?item=registro_user">Cadastrar Usuário</a>
-        <a class="dropdown-item" href="index.php">Login</a>
-        <a class="dropdown-item" href="forgot-password.php">Forgot Password</a>
+        <a class="dropdown-item" href="inicial.php?item=registro_user">Usuário</a>
+        
       </div>
     </li>
 
@@ -45,6 +45,7 @@
         <a class="dropdown-item" href="inicial.php?item=Listar_Clientes">Clientes</a>
         <a class="dropdown-item" href="inicial.php?item=Listar_Advogados">Advogados</a>
         <a class="dropdown-item" href="inicial.php?item=Listar_Agendamentos">Agendamentos</a>
+        <a class="dropdown-item" href="inicial.php?item=Listar_Usuarios">Usuários</a>
         <div class="dropdown-divider"></div>
 
 
@@ -53,13 +54,7 @@
 
 
 
-    <!--  -->
-    <li class="nav-item">
-      <a class="nav-link" href="inicial.php?item=charts">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Charts</span></a>
-    </li>
-
+   
   </ul>
 
   <div id="content-wrapper">

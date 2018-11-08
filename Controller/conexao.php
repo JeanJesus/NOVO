@@ -1,38 +1,31 @@
 <?php
  
 
-class conexao{
+/**
+ * @return \PDO
+ */
+ function getConection() {
+    $dsn = 'pgsql:host=localhost;dbname=advocacia';
+    $user = 'jean';
+    $pass = 'dyjesus0129';
 
-    public function conectar(){
-        $conex = new PDO("pgsql:host=localhost;port=5432;dbname=advocacia;user=jean;password=dyjesus0129");
-        if(isset($conex)){
-            echo"<script>alert('Houve conexão');</script>";
-        }else{
-            echo"<script>alert('Não houve conexao!');</script>";
-        }
-       
+
+    try {
+        $pdo = new PDO($dsn, $user, $pass);
+        return $pdo;
+        /* if(isset($pdo)){
+          echo"<script>alert('CONECTADO COM O POSTGRES!');</script>";
+          }  else {
+          echo"<script>alert('ERRO!');</script>";
+          } */
+    } catch (PDOException $ex) {
+        echo 'ERRO ' . $ex->getMessage();
     }
 }
 
 
 
 
-?>
 
 
-
-
-<html>
-    </head></head>
-
-    <body style="background-color: black;">
-        <?php
-          $conn = new conexao;
-          $conn->conectar();
-
-        ?>
-
-    </body>
-
-
-</html>
+/*___________________________________*/

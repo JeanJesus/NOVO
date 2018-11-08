@@ -28,12 +28,12 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Nome</th>
-                      <th>CPF:</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
+                      <th>CPF - CLIENTE</th>
+                      <th>Registro do Advogado Responsável:</th>
+                      <th>Data Audiencia</th>
+                      <th>Horario</th>
+                      <th>Tipo de Caso</th>
+                      <th>Descrição</th>
                     </tr>
                   </thead>
                   <tfoot>

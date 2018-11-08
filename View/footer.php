@@ -1,3 +1,4 @@
+<?php include_once('../Controller/config/verifica_login.php'); ?>
 <!-- Footer -->
 <footer class="page-footer font-small blue">
 

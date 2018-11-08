@@ -1,3 +1,4 @@
+<?php include_once('../Controller/config/verifica_login.php'); ?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
   <head>
@@ -36,3 +37,4 @@
   </div>
 
 </html>
+

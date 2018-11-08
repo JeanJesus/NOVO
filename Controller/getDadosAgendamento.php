@@ -7,7 +7,7 @@
      $agen->setHorario($_POST['horario']);
      $agen->setTipoCaso($_POST['caso']);
      $agen->setDescricao($_POST['descricao']);
-     
+     $agen->inserAgendamento($agen);
 
      
-     var_dump($agen);
+     //print_r($agen);
