@@ -197,6 +197,23 @@ class Cliente extends Pessoa {
             echo "<script>alert('Cliente Adicionado com Sucesso!');</script>";
             echo "<script>window.location = '..//View/inicial.php?item=CadastrarCliente';</script>";
         }
+        
+    }
+    public function deletarCliente($id){
+        $conn = getConection();
+        $sql = "DELETE FROM $this->table WHERE id_clientes = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id',$id);
+           if($stmt->execute()){
+            echo "<script>alert('Cliente Excluido com Sucesso!');</script>";
+        }else{
+            echo "<script>alert('erro!');</script>";
+        }
+        return $stmt->execute();
+    }
+    
+    public function teste(){
+        echo "<script>alert('TESTE OK');</script>";
     }
 
 }

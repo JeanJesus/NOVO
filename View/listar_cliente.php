@@ -10,6 +10,7 @@
 <script src="vendor/chart.js/Chart.min.js"></script>
 <script src="vendor/datatables/jquery.dataTables.js"></script>
 <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 <!-- Custom scripts for all pages-->
 <script src="js/sb-admin.min.js"></script>
@@ -41,17 +42,19 @@ $cliente = new Cliente();
                         <th>NASCIMENTO</th>
                         <th>CPF</th>
                         <th>RG </th>
-                        <th>ESTADO CIVIL </th>
-                        <th>CEP</th>
+<!--                        <th>ESTADO CIVIL </th>-->
+<!--                        <th>CEP</th>
                         <th>ENDERECO</th>
-                        <th>BAIRRO</th>
+                        <th>BAIRRO</th>-->
                         <th>CIDADE</th>
                         <th>ESTADO </th>
-                        <th>NUMERO </th>
-                        <th>COMPLEMENTO </th>
-                        <th>ESCOLARIDADE </th>
+<!--                        <th>NUMERO </th>-->
+<!--                        <th>COMPLEMENTO </th>-->
+<!--                        <th>ESCOLARIDADE </th>-->
                         <th>PROFISSAO </th>
                         <th>TELEFONE </th>  
+                        <th>EDITAR </th>  
+                        <th>EXCLUIR </th>  
 
                     </tr>
                 </thead>
@@ -63,17 +66,19 @@ $cliente = new Cliente();
                         <th>NASCIMENTO</th>
                         <th>CPF</th>
                         <th>RG </th>
-                        <th>ESTADO CIVIL </th>
-                        <th>CEP</th>
+<!--                    <th>ESTADO CIVIL </th>-->
+<!--                    <th>CEP</th>
                         <th>ENDERECO</th>
-                        <th>BAIRRO</th>
+                        <th>BAIRRO</th>-->
                         <th>CIDADE</th>
                         <th>ESTADO </th>
-                        <th>NUMERO </th>
-                        <th>COMPLEMENTO </th>
-                        <th>ESCOLARIDADE </th>
+<!--                    <th>NUMERO </th>-->
+<!--                    <th>COMPLEMENTO </th>-->
+<!--                    <th>ESCOLARIDADE </th>-->
                         <th>PROFISSAO </th>
                         <th>TELEFONE </th>
+                        <th>EDITAR </th>  
+                        <th>EXCLUIR </th>  
 
 
                     </tr>
@@ -91,18 +96,21 @@ $cliente = new Cliente();
                             <td><?php echo $value['data_nascimento']; ?></td>
                             <td><?php echo $value['cpf']; ?></td>
                             <td><?php echo $value['rg']; ?></td>
-                            <td><?php echo $value['estado_civil']; ?></td>
-                            <td><?php echo $value['cep']; ?></td>                        
-                            <td><?php echo $value['endereco']; ?></td>
-                            <td><?php echo $value['bairro']; ?></td>
+                            
+                          
                             <td><?php echo $value['cidade']; ?></td>
                             <td><?php echo $value['estado']; ?></td>
-                            <td><?php echo $value['numero']; ?></td>
-                            <td><?php echo $value['complemento']; ?></td>
-                            <td><?php echo $value['escolaridade']; ?></td>
+                            
+                           
+                            
                             <td><?php echo $value['profissao']; ?></td>
                             <td><?php echo $value['telefone']; ?></td>
-
+                            <td><a href="inicial.php?item=editar_item">Editar</a></td>
+                           <!-- <td><a href="inicial.php?item=deletarCliente&id=".value[id]."">Deletar</a></td>
+                           -->
+                           <td>
+                               <?php echo"<a href='inicial.php?item=deletarCliente&id=".$value['id_clientes'] ."' onclick='return confirm(\"Deseja realmente deletar?\")'>Deletar</a>";?>
+                            </td>
                         </tr>     
                              <?php } ?>
                     </tbody>

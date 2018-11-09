@@ -25,8 +25,9 @@ abstract class Crud extends conexao{
     }
     
     public function delete(){
-        $sql = "DELETE FROM $this->table WHERE id = :id";
-        $stmt = conexao::prepare($sql);
+        $conn = getConection();
+        $sql = "DELETE FROM $this->table WHERE cpf = :cpf";
+        $stmt = $conn->prepare($sql);
         $stmt->bindParam(':id',$id, PDO::PARAM_INT);
         return $stmt->execute();
     }

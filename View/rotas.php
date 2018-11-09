@@ -73,6 +73,17 @@ if($item =='EditarAdvogados'){
       include_once "../View/inicial.php";
 }
 
+$item = $_GET['item'];
+if($item =='editar_item'){
+    include_once ('../View/Editar_Cliente.php');
+    }else{
+      include_once "../View/inicial.php";
+}
 
 
-
+$item = $_GET['item'];
+if($item =='deletarCliente'){
+    include_once ('../Controller/deletarCliente.php');
+    }else{
+      include_once "../View/inicial.php";
+}
