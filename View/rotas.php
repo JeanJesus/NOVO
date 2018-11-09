@@ -87,3 +87,29 @@ if($item =='deletarCliente'){
     }else{
       include_once "../View/inicial.php";
 }
+$item = $_GET['item'];
+if($item =='deletarAdvogado'){
+    include_once ('../Controller/deletarAdvogado.php');
+    }else{
+      include_once "../View/inicial.php";
+}
+
+$item = $_GET['item'];
+if($item =='DeletarAgendamento'){
+    include_once ('../Controller/deletarAgendamento.php');
+    }else{
+      include_once "../View/inicial.php";
+}
+
+$item = $_GET['item'];
+if($item =='DeletarUsuario'){
+    include_once ('../Controller/deletarUsuario.php');
+    }else{
+      include_once "../View/inicial.php";
+}
+
+
+
+
+
+

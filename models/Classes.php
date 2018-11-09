@@ -213,9 +213,7 @@ class Cliente extends Pessoa {
         return $stmt->execute();
     }
     
-    public function teste(){
-        echo "<script>alert('TESTE OK');</script>";
-    }
+ 
 
 }
 
@@ -290,6 +288,27 @@ class Advogado extends Pessoa {
             echo "<script>window.location = '../View/inicial.php?item=CadastrarAdvogados';</script>";
         }
     }
+     public function ListarAdvogados() {
+
+        $conn = getConection();
+        $sql = "SELECT *FROM $this->table";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+       public function deletarAdvogado($id){
+        $conn = getConection();
+        $sql = "DELETE FROM $this->table WHERE oab_numero = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id',$id);
+           if($stmt->execute()){
+            echo "<script>alert('Advogado Excluido com Sucesso!');</script>";
+            echo "<script>window.location = '../View/inicial.php?item=Listar_Advogados';</script>";
+        }else{
+            echo "<script>alert('erro!');</script>";
+        }
+        return $stmt->execute();
+    }
 
 }
 
@@ -350,6 +369,16 @@ class Agendamento {
     public function setDescricao($descricao) {
         $this->descricao = $descricao;
     }
+    
+     public function ListarAgendamento() {
+
+        $conn = getConection();
+        $sql = "SELECT *FROM tbl_003_agendamentos INNER JOIN tbl_001_clientes ON tbl_001_clientes.cpf = tbl_003_agendamentos.fk_cpf_cliente INNER JOIN tbl_002_advogados ON tbl_002_advogados.oab_numero = tbl_003_agendamentos.fk_oab_advogado";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+    
 
     public function inserAgendamento($agen) {
         $conn = getConection();
@@ -372,6 +401,19 @@ class Agendamento {
         }
     }
 
+      public function deletarAgendamento($id){
+        $conn = getConection();
+        $sql = "DELETE FROM $this->table WHERE id_agendamento = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id',$id);
+           if($stmt->execute()){
+            echo "<script>alert('Agendamento Excluido com Sucesso!');</script>";
+            echo "<script>window.location = '../View/inicial.php?item=Listar_Agendamentos';</script>";
+        }else{
+            echo "<script>alert('erro!');</script>";
+        }
+        return $stmt->execute();
+    }
 }
 
 class Usuario {
@@ -436,6 +478,20 @@ class Usuario {
             echo "<script>alert('USUARIO CADASTRADO COM SUCESSO!');</script>";
             echo "<script>window.location = '../View/inicial.php?item=registro_user';</script>";
         }
+    }
+    
+     public function deletarUsuario($id){
+        $conn = getConection();
+        $sql = "DELETE FROM $this->table WHERE id = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id',$id);
+           if($stmt->execute()){
+            echo "<script>alert('Usuario Excluido com Sucesso!');</script>";
+            echo "<script>window.location = '../View/inicial.php?item=Listar_Usuarios';</script>";
+        }else{
+            echo "<script>alert('erro!');</script>";
+        }
+        return $stmt->execute();
     }
 
 }

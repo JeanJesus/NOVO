@@ -53,8 +53,8 @@ $cliente = new Cliente();
 <!--                        <th>ESCOLARIDADE </th>-->
                         <th>PROFISSAO </th>
                         <th>TELEFONE </th>  
-                        <th>EDITAR </th>  
-                        <th>EXCLUIR </th>  
+                        <th>Editar </th>  
+                        <th>Excluir </th> 
 
                     </tr>
                 </thead>
@@ -77,8 +77,8 @@ $cliente = new Cliente();
 <!--                    <th>ESCOLARIDADE </th>-->
                         <th>PROFISSAO </th>
                         <th>TELEFONE </th>
-                        <th>EDITAR </th>  
-                        <th>EXCLUIR </th>  
+                        <th>Editar </th>  
+                        <th>Excluir </th>  
 
 
                     </tr>

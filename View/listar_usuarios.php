@@ -37,6 +37,8 @@ $user =new Usuario(); ?>
                         <th>Sobrenome</th>
                         <th>Email</th>
                         <th>Seha</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
 
                     </tr>
                 </thead>
@@ -46,16 +48,24 @@ $user =new Usuario(); ?>
                         <th>Sobrenome</th>
                         <th>Email</th>
                         <th>Seha</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
                     </tr>
                 </tfoot>
                 
                 <?php foreach ($user->findAll() as $key => $value): ?>
                 <tbody>
                     <tr>
-                        <td><?php echo $value->primeiro_nome; ?></td>
-                        <td><?php echo $value->ultimo_nome; ?></td>
-                        <td><?php echo $value->email; ?></td>                       
-                        <td><?php echo $value->senha; ?></td>
+                        <td><?php echo $value['primeiro_nome']; ?></td>
+                        <td><?php echo $value['ultimo_nome']; ?></td>
+                        <td><?php echo $value['email']; ?></td>                       
+                        <td><?php echo $value['senha']; ?></td>
+                        <td>
+                               <?php echo "<a href='inicial.php?item=editar_item'?>Editar</a> "?>
+                       </td>
+                       <td>
+                               <?php echo"<a href='inicial.php?item=DeletarUsuario&id=".$value['id'] ."' onclick='return confirm(\"Deseja realmente excluir?\")'>Deletar</a>";?>
+                      </td>
 
                     </tr>
 
