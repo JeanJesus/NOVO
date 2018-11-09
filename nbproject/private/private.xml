@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/NOVO_ATL/View/cabecalho.php</file>
-            <file>file:/var/www/html/NOVO_ATL/Controller/config/val_login.php</file>
+            <file>file:/var/www/html/NOVO/Controller/conexao.php</file>
+            <file>file:/var/www/html/NOVO/Controller/Crud.php</file>
+            <file>file:/var/www/html/NOVO/View/listar_cliente.php</file>
+            <file>file:/var/www/html/NOVO/models/Classes.php</file>
+            <file>file:/var/www/html/NOVO/Controller/getDadosCliente.php</file>
         </group>
     </open-files>
 </project-private>

@@ -1,4 +1,4 @@
-<?php include_once('js/script_menu.php');?>   <!-- Importa os arquivos para o funcionamento dos menus -->
+<?php include_once('js/script_menu.php'); ?>   <!-- Importa os arquivos para o funcionamento dos menus -->
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -17,92 +17,61 @@
 <!-- Demo scripts for this page-->
 <script src="js/demo/datatables-demo.js"></script>
 <script src="js/demo/chart-area-demo.js"></script>
+<?php 
 
+include_once '../models/Classes.php';
+$user =new Usuario(); ?>
 
 <br />
-          <!-- DataTables Example -->
-          <div class="card mb-3">
-            <div class="card-header">
-              <i class="fas fa-table"></i>
-              Lista De Usuários</div>
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+<!-- DataTables Example -->
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Lista De Usuários</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
                     <tr>
-                      <th>Nome</th>
-                      <th>Sobrenome</th>
-                      <th>Email</th>
-                                                             
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                     <th>Nome</th>
-                      <th>Sobrenome</th>
-                      <th>Email</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                    
-                    </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                     
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Junior Technical Author</td>
-                      <td>San Francisco</td>
-                     
-                    </tr>
-                    <tr>
-                      <td>Cedric Kelly</td>
-                      <td>Senior Javascript Developer</td>
-                      <td>Edinburgh</td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Airi Satou</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Brielle Williamson</td>
-                      <td>Integration Specialist</td>
-                      <td>New York</td>
-                      
-                    </tr>
-                    <tr>
-                      <td>Herrod Chandler</td>
-                      <td>Sales Assistant</td>
-                      <td>San Francisco</td>
-                     
-                    </tr>
-                    <tr>
-                      <td>Rhona Davidson</td>
-                      <td>Integration Specialist</td>
-                      <td>Tokyo</td>
-                      
-                    </tr>
-                    
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
+                        <th>Nome</th>
+                        <th>Sobrenome</th>
+                        <th>Email</th>
+                        <th>Seha</th>
 
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Sobrenome</th>
+                        <th>Email</th>
+                        <th>Seha</th>
+                    </tr>
+                </tfoot>
+                
+                <?php foreach ($user->findAll() as $key => $value): ?>
+                <tbody>
+                    <tr>
+                        <td><?php echo $value->primeiro_nome; ?></td>
+                        <td><?php echo $value->ultimo_nome; ?></td>
+                        <td><?php echo $value->email; ?></td>                       
+                        <td><?php echo $value->senha; ?></td>
 
+                    </tr>
+
+                <?php endforeach; ?>
+
+                </tbody>
+            </table>
         </div>
-        <!-- /.container-fluid -->
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
 
-        <!-- Sticky Footer -->
+
+</div>
+<!-- /.container-fluid -->
+
+<!-- Sticky Footer -->
 
 </html>

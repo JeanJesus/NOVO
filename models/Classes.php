@@ -1,8 +1,10 @@
 <?php
+
 include_once '../Controller/conexao.php';
-include_once 'conexao.php';
+//include_once 'conexao.php';
 
 abstract class Pessoa {
+
     private $table = 'tbl_001_clientes';
     protected $nome;
     protected $email;
@@ -10,8 +12,8 @@ abstract class Pessoa {
     protected $cpf;
     protected $rg;
     protected $estado_civil;
-    protected  $telefone; 
-   
+    protected $telefone;
+
     public function setNome($nome) {
         $this->nome = $nome;
     }
@@ -39,7 +41,6 @@ abstract class Pessoa {
     public function setTelefone($telefone) {
         $this->telefone = $telefone;
     }
-
 
     public function getNome() {
         return $this->nome;
@@ -69,19 +70,14 @@ abstract class Pessoa {
         return $this->telefone;
     }
 
-
-    public function mostrarNome(){
+    public function mostrarNome() {
         echo $this->nome;
     }
-   
-         
-    
-    
-    
+
 }
 
+class Cliente extends Pessoa {
 
-class Cliente extends Pessoa{
     private $table = 'tbl_001_clientes';
     private $escolaridade;
     private $profissao;
@@ -91,8 +87,8 @@ class Cliente extends Pessoa{
     private $cidade;
     private $estado;
     private $numero;
-    private $complemento;   
-    
+    private $complemento;
+
     public function getEscolaridade() {
         return $this->escolaridade;
     }
@@ -164,8 +160,18 @@ class Cliente extends Pessoa{
     public function setComplemento($complemento) {
         $this->complemento = $complemento;
     }
+
+    public function findAllCli() {
+
+        $conn = getConection();
+        $sql = "SELECT *FROM $this->table";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
     public function insertCliente($cli) {
-       $conn = getConection();
+        $conn = getConection();
         $sql = "INSERT INTO $this->table(nome_cliente,email,data_nascimento,cpf,rg,estado_civil,cep,endereco,bairro,cidade,estado,numero,complemento,escolaridade,profissao,telefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 
@@ -188,21 +194,22 @@ class Cliente extends Pessoa{
         $stmt->bindValue(16, $this->telefone);
 
         if ($stmt->execute()) {
-           echo "<script>alert('Advogado Adicionado com Sucesso!');</script>"; 
-            echo "<script>window.location = '..//View/inicial.php?item=CadastrarCliente';</script>"; 
-         }
+            echo "<script>alert('Cliente Adicionado com Sucesso!');</script>";
+            echo "<script>window.location = '..//View/inicial.php?item=CadastrarCliente';</script>";
+        }
     }
 
 }
 
-class Advogado extends Pessoa{
+class Advogado extends Pessoa {
+
     private $table = 'tbl_002_advogados';
     private $seccional;
     private $n_oab;
     private $data_expedicao;
     private $data_validade;
     private $area_de_atuacao;
-    
+
     public function getSeccional() {
         return $this->seccional;
     }
@@ -243,32 +250,33 @@ class Advogado extends Pessoa{
         $this->area_de_atuacao = $area_de_atuacao;
     }
 
-    public function inserAdvogado($adv){
+    public function inserAdvogado($adv) {
         $conn = getConection();
         $sql = "INSERT INTO $this->table (nome,cpf,data_nascimento,rg,estado_civil,telefone,seccional,oab_numero,data_expedicao,data_validade,tipo_caso) "
                 . "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
+
         $stmt = $conn->prepare($sql);
-        $stmt->bindValue(1,   $this->nome);
-        $stmt->bindValue(2,   $this->cpf);
-        $stmt->bindValue(3,   $this->data_nascimento);
-        $stmt->bindValue(4,   $this->rg);
-        $stmt->bindValue(5,   $this->estado_civil);
-        $stmt->bindValue(6,   $this->telefone);
-        $stmt->bindValue(7,   $this->seccional);
-        $stmt->bindValue(8,   $this->n_oab);
-        $stmt->bindValue(9,   $this->data_expedicao);
-        $stmt->bindValue(10,  $this->data_validade);
-        $stmt->bindValue(11,  $this->area_de_atuacao);
+        $stmt->bindValue(1, $this->nome);
+        $stmt->bindValue(2, $this->cpf);
+        $stmt->bindValue(3, $this->data_nascimento);
+        $stmt->bindValue(4, $this->rg);
+        $stmt->bindValue(5, $this->estado_civil);
+        $stmt->bindValue(6, $this->telefone);
+        $stmt->bindValue(7, $this->seccional);
+        $stmt->bindValue(8, $this->n_oab);
+        $stmt->bindValue(9, $this->data_expedicao);
+        $stmt->bindValue(10, $this->data_validade);
+        $stmt->bindValue(11, $this->area_de_atuacao);
         if ($stmt->execute()) {
-            echo "<script>alert('Advogado Adicionado com Sucesso!');</script>"; 
-            echo "<script>window.location = '../View/inicial.php?item=CadastrarAdvogados';</script>"; 
+            echo "<script>alert('Advogado Adicionado com Sucesso!');</script>";
+            echo "<script>window.location = '../View/inicial.php?item=CadastrarAdvogados';</script>";
         }
     }
-    
+
 }
 
-class Agendamento{
+class Agendamento {
+
     private $table = 'tbl_003_agendamentos';
     public $cpf_agendado;
     public $oabResponsavel;
@@ -276,7 +284,7 @@ class Agendamento{
     public $horario;
     public $tipoCaso;
     public $descricao;
-    
+
     public function getCpf_agendado() {
         return $this->cpf_agendado;
     }
@@ -325,39 +333,37 @@ class Agendamento{
         $this->descricao = $descricao;
     }
 
-    public function inserAgendamento($agen){
+    public function inserAgendamento($agen) {
         $conn = getConection();
         $sql = "INSERT INTO $this->table(fk_cpf_cliente,fk_oab_advogado,data_audiencia,horario,tipo_caso,descricao) VALUES(?,?,?,?,?,?)";
-        
+
         $stmt = $conn->prepare($sql);
-        $stmt->bindValue(1,  $this->cpf_agendado);
-        $stmt->bindValue(2,  $this->oabResponsavel);
-        $stmt->bindValue(3,  $this->dataAudiencia);
+        $stmt->bindValue(1, $this->cpf_agendado);
+        $stmt->bindValue(2, $this->oabResponsavel);
+        $stmt->bindValue(3, $this->dataAudiencia);
         $stmt->bindValue(4, $this->horario);
-        $stmt->bindValue(5,  $this->tipoCaso);
-        $stmt->bindValue(6,  $this->descricao);
-        
-       if ($stmt->execute()) {
-            echo "<script>alert('AGENDAMENTO REALIZADO!');</script>"; 
+        $stmt->bindValue(5, $this->tipoCaso);
+        $stmt->bindValue(6, $this->descricao);
+
+        if ($stmt->execute()) {
+            echo "<script>alert('AGENDAMENTO REALIZADO!');</script>";
             echo "<script>window.location = '../View/inicial.php?item=CadastrarAgendamento';</script>";
-        }else{
-            echo "<script>alert('CPF OU N° OAB NÃO CADASTRADOS!, POR FAVOR, VERIFIQUE E TENTE NOVAMENTE!');</script>"; 
+        } else {
+            echo "<script>alert('CPF OU N° OAB NÃO CADASTRADOS!, POR FAVOR, VERIFIQUE E TENTE NOVAMENTE!');</script>";
             echo "<script>window.location = '../View/inicial.php?item=CadastrarAgendamento';</script>";
         }
     }
-    
-    
-    
-    
+
 }
 
-class Usuario{
+class Usuario {
+
     private $table = 'login';
     private $primeiro_nome;
     private $segundo_nome;
     private $email;
     private $senha;
-    
+
     public function getPrimeiro_nome() {
         return $this->primeiro_nome;
     }
@@ -390,24 +396,28 @@ class Usuario{
         $this->senha = $senha;
     }
 
-    public function inserUser($user){
+    public function findAll() {
         $conn = getConection();
-      
-          $sql = "INSERT INTO login(email,senha,primeiro_nome,ultimo_nome) VALUES(?,?,?,?)";
-        
+        $sql = "SELECT *FROM $this->table";
         $stmt = $conn->prepare($sql);
-        $stmt->bindValue(1, $this->email);        
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
+    public function inserUser($user) {
+        $conn = getConection();
+
+        $sql = "INSERT INTO login(email,senha,primeiro_nome,ultimo_nome) VALUES(?,?,?,?)";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(1, $this->email);
         $stmt->bindValue(2, $this->senha);
         $stmt->bindValue(3, $this->primeiro_nome);
-        $stmt->bindValue(4, $this->segundo_nome); 
+        $stmt->bindValue(4, $this->segundo_nome);
         if ($stmt->execute()) {
-            echo "<script>alert('USUARIO CADASTRADO COM SUCESSO!');</script>"; 
+            echo "<script>alert('USUARIO CADASTRADO COM SUCESSO!');</script>";
             echo "<script>window.location = '../View/inicial.php?item=registro_user';</script>";
         }
-        
-        
-          
-    
     }
-    
+
 }
