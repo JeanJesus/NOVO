@@ -1,7 +1,7 @@
 <?php
 
 include_once '../Controller/conexao.php';
-//include_once 'conexao.php';
+include_once 'conexao.php';
 
 abstract class Pessoa {
 
@@ -195,7 +195,7 @@ class Cliente extends Pessoa {
 
         if ($stmt->execute()) {
             echo "<script>alert('Cliente Adicionado com Sucesso!');</script>";
-            echo "<script>window.location = '..//View/inicial.php?item=CadastrarCliente';</script>";
+            echo "<script>window.location = '../View/inicial.php?item=CadastrarCliente';</script>";
         }
         
     }
@@ -206,6 +206,7 @@ class Cliente extends Pessoa {
         $stmt->bindParam(':id',$id);
            if($stmt->execute()){
             echo "<script>alert('Cliente Excluido com Sucesso!');</script>";
+            echo "<script>window.location = '../View/inicial.php?item=Listar_Clientes';</script>";
         }else{
             echo "<script>alert('erro!');</script>";
         }

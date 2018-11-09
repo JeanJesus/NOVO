@@ -109,7 +109,7 @@ $cliente = new Cliente();
                            <!-- <td><a href="inicial.php?item=deletarCliente&id=".value[id]."">Deletar</a></td>
                            -->
                            <td>
-                               <?php echo"<a href='inicial.php?item=deletarCliente&id=".$value['id_clientes'] ."' onclick='return confirm(\"Deseja realmente deletar?\")'>Deletar</a>";?>
+                               <?php echo"<a href='inicial.php?item=deletarCliente&id=".$value['id_clientes'] ."' onclick='return confirm(\"Deseja realmente excluir?\")'>Deletar</a>";?>
                             </td>
                         </tr>     
                              <?php } ?>
