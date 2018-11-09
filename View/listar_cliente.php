@@ -19,7 +19,7 @@
 <script src="js/demo/datatables-demo.js"></script>
 <script src="js/demo/chart-area-demo.js"></script>
 <?php
-include_once '../models/Classes.php';
+include_once '../models/Classe_Cliente.php';
 $cliente = new Cliente();
 ?>
 

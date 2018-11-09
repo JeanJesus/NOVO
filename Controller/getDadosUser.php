@@ -1,5 +1,5 @@
 <?php
-     require_once '../models/Classes.php';
+     require_once '../models/Classe_Usuario.php';
      $user = new Usuario;
      $user->setPrimeiro_nome($_POST['primeiro_nome']);
      $user->setSegundo_nome($_POST['utlimo_nome']);

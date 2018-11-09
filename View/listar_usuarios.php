@@ -19,7 +19,7 @@
 <script src="js/demo/chart-area-demo.js"></script>
 <?php 
 
-include_once '../models/Classes.php';
+include_once '../models/Classe_Usuario.php';
 $user =new Usuario(); ?>
 
 <br />
@@ -36,7 +36,7 @@ $user =new Usuario(); ?>
                         <th>Nome</th>
                         <th>Sobrenome</th>
                         <th>Email</th>
-                        <th>Seha</th>
+                       
                         <th>Editar</th>
                         <th>Excluir</th>
 
@@ -47,7 +47,7 @@ $user =new Usuario(); ?>
                         <th>Nome</th>
                         <th>Sobrenome</th>
                         <th>Email</th>
-                        <th>Seha</th>
+                        
                         <th>Editar</th>
                         <th>Excluir</th>
                     </tr>
@@ -59,7 +59,7 @@ $user =new Usuario(); ?>
                         <td><?php echo $value['primeiro_nome']; ?></td>
                         <td><?php echo $value['ultimo_nome']; ?></td>
                         <td><?php echo $value['email']; ?></td>                       
-                        <td><?php echo $value['senha']; ?></td>
+                        
                         <td>
                                <?php echo "<a href='inicial.php?item=editar_item'?>Editar</a> "?>
                        </td>

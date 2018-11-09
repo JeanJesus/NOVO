@@ -1,6 +1,6 @@
 <?php include_once('js/script_menu.php');?>   <!-- Importa os arquivos para o funcionamento dos menus -->
 
-    <?php include_once '../models/Classes.php'; 
+    <?php include_once '../models/Classe_Agendamento.php'; 
         $agen = new Agendamento();
     ?>
 <!-- Bootstrap core JavaScript-->

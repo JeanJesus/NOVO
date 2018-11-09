@@ -1,5 +1,5 @@
 <?php
-    require_once '../models/Classes.php';
+    require_once '../models/Classe_Advogado.php';
     $adv = new Advogado();
     $adv->deletarAdvogado($_GET['id']);
     

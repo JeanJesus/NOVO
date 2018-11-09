@@ -1,5 +1,5 @@
 <?php
-     require_once '../models/Classes.php';
+     require_once '../models/Classe_Agendamento.php';
      $agen = new Agendamento;
      $agen->setCpf_agendado($_POST['cpf']);
      $agen->setOabResponsavel($_POST['n_oab']);

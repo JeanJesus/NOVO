@@ -1,6 +1,6 @@
 <?php include_once('../Controller/config/verifica_login.php'); ?>
 <?php include_once('js/script_menu.php');?>   <!-- Importa os arquivos para o funcionamento dos menus -->
-<?php require_once '../models/Classes.php';
+<?php require_once '../models/Classe_Advogado.php';
     $adv = new 
             Advogado();
 ?>

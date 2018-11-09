@@ -1,5 +1,5 @@
 <?php
-    require_once '../models/Classes.php';
+    require_once '../models/Classe_Cliente.php';
     $cli = new Cliente();
     $cli->deletarCliente($_GET['id']);
     
