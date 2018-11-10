@@ -139,5 +139,55 @@
     }
     
  
+      public function EncontrarCliente($id){
+        $conn = getConection();
+        $sql = "SELECT *FROM $this->table WHERE id_clientes = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id',$id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch();
+      
+    }
+    
+      public function atualizarCliente($id){
+            //echo"estou recebendo $id";
+         $conn = getConection();
+        $sql = "UPDATE  $this->table SET nome_cliente = :nome, email = :email, data_nascimento = :data, cpf = :cpf, "
+                . "rg = :rg, estado_civil = :estado_civil, cep = :cep, endereco = :endereco, bairro = :bairro, "
+                . "cidade =:cidade, estado = :estado, numero = :numero, complemento = :complemento,"
+                . " escolaridade = :escolaridade, profissao =:profissao, telefone = :telefone WHERE id_clientes =:id"; 
+       
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':nome',  $this->nome);
+        $stmt->bindParam(':email',  $this->email);
+        $stmt->bindParam(':data',$this->data_nascimento);
+        $stmt->bindParam(':cpf',$this->cpf);
+        $stmt->bindParam(':rg',$this->rg);
+        $stmt->bindParam(':estado_civil',$this->estado_civil);
+        $stmt->bindParam(':cep',$this->cep);
+        $stmt->bindParam(':endereco',$this->endereco); 
+        $stmt->bindParam(':bairro',$this->bairro);
+        $stmt->bindParam(':cidade',$this->cidade);
+        $stmt->bindParam(':estado',$this->estado);
+        $stmt->bindParam(':numero',$this->numero);
+        $stmt->bindParam(':complemento',$this->complemento);
+        $stmt->bindParam(':escolaridade',$this->escolaridade);
+        $stmt->bindParam(':profissao',$this->profissao);
+        $stmt->bindParam(':telefone',$this->telefone);
+        $stmt->bindParam(':id',$id);
+        
+        if($stmt->execute()){
+            echo "<script>alert(' Cliente Atualizado com Sucesso!');</script>";
+            echo "<script>window.location = '../View/inicial.php?item=Listar_Clientes';</script>";
+        }else{
+            echo "<script>alert(' Não foi possivel realiar a atualização!');</script>";
+        } 
+        
+                
+      
+        
+        
+    }
+    
 
 }

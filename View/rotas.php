@@ -61,7 +61,7 @@ if($item =="Listar_Usuarios"){
 
 
 $item = $_GET['item'];
-if($item =="EditarCliente"){
+if($item =="editar_Cliente"){
     include_once ('Editar_Cliente.php');
     }else{
       include_once "inicial.php";

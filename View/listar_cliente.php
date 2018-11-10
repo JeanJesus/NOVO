@@ -105,9 +105,8 @@ $cliente = new Cliente();
                             
                             <td><?php echo $value['profissao']; ?></td>
                             <td><?php echo $value['telefone']; ?></td>
-                            <td><a href="inicial.php?item=editar_item">Editar</a></td>
-                           <!-- <td><a href="inicial.php?item=deletarCliente&id=".value[id]."">Deletar</a></td>
-                           -->
+                            <td><?php echo "<a href='inicial.php?item=editar_Cliente&id=".$value['id_clientes']."'>Editar</a>"; ?></td>
+                          
                            <td>
                                <?php echo"<a href='inicial.php?item=deletarCliente&id=".$value['id_clientes'] ."' onclick='return confirm(\"Deseja realmente excluir?\")'>Deletar</a>";?>
                             </td>
