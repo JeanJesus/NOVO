@@ -78,5 +78,43 @@
         }
         return $stmt->execute();
     }
+    
+      public function EncontrarUsuario($id){
+           $conn = getConection();
+        $sql = "SELECT *FROM $this->table WHERE id = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id',$id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch();
+        
+    }
+    
+    
+     public function atualizarUsuario($id){
+            //echo"estou recebendo $id";
+         $conn = getConection();
+        $sql = "UPDATE  $this->table SET email = :email, primeiro_nome = :primeiro_nome, ultimo_nome = :ultimo_nome WHERE id = :id";
+       
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':email', $this->getEmail());
+        $stmt->bindParam(':primeiro_nome', $this->getPrimeiro_nome());
+        $stmt->bindParam(':ultimo_nome', $this->getSegundo_nome());
+        $stmt->bindParam(':id',$id);
+        //$stmt->bindParam(':senha', $this->getSenha());       
+                
+        if($stmt->execute()){
+            echo "<script>alert(' Usuário Atualizado com Sucesso!');</script>";
+            echo "<script>window.location = '../View/inicial.php?item=Listar_Usuarios';</script>";
+        }else{
+            echo "<script>alert(' Não foi possivel realizar a atualização!');</script>";
+        } 
+        
+                
+      
+        
+        
+    }
+    
+    
 
 }

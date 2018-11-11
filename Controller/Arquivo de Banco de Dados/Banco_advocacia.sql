@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 10.4 (Ubuntu 10.4-0ubuntu0.18.04)
--- Dumped by pg_dump version 10.4 (Ubuntu 10.4-0ubuntu0.18.04)
+-- Dumped from database version 9.6.10
+-- Dumped by pg_dump version 9.6.10
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -125,14 +125,14 @@ CREATE TABLE public.tbl_002_advogados (
     id_advogado integer NOT NULL,
     nome character varying,
     cpf character varying,
-    data_nascimento date,
+    data_nascimento character varying,
     rg character varying,
     estado_civil character varying,
     telefone character varying,
     seccional character varying,
     oab_numero character varying,
-    data_expedicao date,
-    data_validade date,
+    data_expedicao character varying,
+    data_validade character varying,
     tipo_caso character varying
 );
 
@@ -237,6 +237,13 @@ jeansouza@hotmail.com	202cb962ac59075b964b07152d234b70	Jean	Souza	8
 
 
 --
+-- Name: login_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jean
+--
+
+SELECT pg_catalog.setval('public.login_id_seq', 8, true);
+
+
+--
 -- Data for Name: tbl_001_clientes; Type: TABLE DATA; Schema: public; Owner: jean
 --
 
@@ -257,6 +264,13 @@ COPY public.tbl_001_clientes (id_clientes, nome_cliente, email, data_nascimento,
 
 
 --
+-- Name: tbl_001_clientes_id_clientes_seq; Type: SEQUENCE SET; Schema: public; Owner: jean
+--
+
+SELECT pg_catalog.setval('public.tbl_001_clientes_id_clientes_seq', 17, true);
+
+
+--
 -- Data for Name: tbl_002_advogados; Type: TABLE DATA; Schema: public; Owner: jean
 --
 
@@ -269,6 +283,13 @@ COPY public.tbl_002_advogados (id_advogado, nome, cpf, data_nascimento, rg, esta
 
 
 --
+-- Name: tbl_002_advogados_id_advogado_seq; Type: SEQUENCE SET; Schema: public; Owner: jean
+--
+
+SELECT pg_catalog.setval('public.tbl_002_advogados_id_advogado_seq', 5, true);
+
+
+--
 -- Data for Name: tbl_003_agendamentos; Type: TABLE DATA; Schema: public; Owner: jean
 --
 
@@ -278,27 +299,6 @@ COPY public.tbl_003_agendamentos (id_agendamento, fk_cpf_cliente, fk_oab_advogad
 11	05735105144	134679	22/03/2019	16:30:00	Direito Familiar	LOCAL: Tribunal Da Familia -DF.\r\nAgendamento: Divisão de Bens.
 12	05735105144	134679	10/05/2019	13:20:00	Direito Familiar	Tribunal da Família -DF
 \.
-
-
---
--- Name: login_id_seq; Type: SEQUENCE SET; Schema: public; Owner: jean
---
-
-SELECT pg_catalog.setval('public.login_id_seq', 8, true);
-
-
---
--- Name: tbl_001_clientes_id_clientes_seq; Type: SEQUENCE SET; Schema: public; Owner: jean
---
-
-SELECT pg_catalog.setval('public.tbl_001_clientes_id_clientes_seq', 17, true);
-
-
---
--- Name: tbl_002_advogados_id_advogado_seq; Type: SEQUENCE SET; Schema: public; Owner: jean
---
-
-SELECT pg_catalog.setval('public.tbl_002_advogados_id_advogado_seq', 5, true);
 
 
 --

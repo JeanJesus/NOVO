@@ -1,8 +1,6 @@
 <?php include_once('js/script_menu.php');?>   <!-- Importa os arquivos para o funcionamento dos menus -->
-
-    <?php include_once '../models/Classe_Agendamento.php'; 
-        $agen = new Agendamento();
-    ?>
+ <?php include_once '../models/Classe_Agendamento.php'; ?>
+ <?php  $agen = new Agendamento();  ?>
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -61,7 +59,7 @@
                       <td><?php echo $value['nome'];  ?></td>
                       <td><?php echo $value['data_audiencia'];  ?></td>
                       <td><?php echo $value['horario'];  ?></td>
-                      <td><?php echo $value['tipo_caso'];  ?></td>
+                      <td><?php echo $value['tipo_caso']; ?></td>
                       <td><?php echo $value['descricao'];  ?></td>
                       <td>
                                <?php echo "<a href='inicial.php?item=EditarAgendamento&id=".$value['id_agendamento']."'>Editar</a>"; ?>
@@ -70,7 +68,7 @@
                                <?php echo"<a href='inicial.php?item=DeletarAgendamento&id=".$value['id_agendamento'] ."' onclick='return confirm(\"Deseja realmente excluir?\")'>Deletar</a>";?>
                       </td>
                     </tr>
-                    <?php }?>
+                    <?php } ?>
                   </tbody>
                 </table>
               </div>

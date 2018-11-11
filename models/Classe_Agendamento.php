@@ -117,12 +117,12 @@
     
      public function AtualizarAgendamento($id){
        $conn = getConection();
-        $sql = "UPDATE $this->table SET data_audiencia = :data_audiencia, horario = :horario, tipo_caso = :caso, descricao = :desc WHERE id_agendamento = :id";
+        $sql = "UPDATE $this->table SET data_audiencia = :data_audiencia, horario = :horario, descricao = :desc WHERE id_agendamento = :id";
         $stmt = $conn->prepare($sql);
         
         $stmt->bindParam(':data_audiencia', $this->getDataAudiencia());
         $stmt->bindParam(':horario',  $this->getHorario());
-        $stmt->bindParam(':caso', $this->getTipoCaso());
+        //$stmt->bindParam(':caso', $this->getTipoCaso());
         $stmt->bindValue(':desc', $this->getDescricao());
         $stmt->bindValue(':id', $id);
         

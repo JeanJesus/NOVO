@@ -118,4 +118,12 @@ if($item =='EditarAgendamento'){
 }
 
 
+$item = $_GET['item'];
+if($item =='EditarUsuario'){
+    include_once ('EditarUsuario.php');
+    }else{
+      include_once "../View/inicial.php";
+}
+
+
 

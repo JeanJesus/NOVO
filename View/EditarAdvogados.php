@@ -141,7 +141,7 @@
                                         <label class="col-md-2 control-label" for="Cadastrar"></label>
                                         <div class="col-md-8">
                                             <button id="Cadastrar" name="Cadastrar" class="btn btn-success" type="Submit">Atualizar</button>
-                                            <button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset">Cancelar</button>
+                                            <button id="Cancelar" onClick="history.go(-1)" name="Cancelar" class="btn btn-danger" type="Reset">Cancelar</button>
 
                                         </div>
                                         <br />

@@ -49,10 +49,10 @@
                         </div>
 
                         <div class="form-group col-md-12" align="center">
-                            <div class="form-group col-md-6" align="center">
+                           <!-- <div class="form-group col-md-6" align="center">
                                 <label for="inputAddress">Tipo de Caso:</label>
-                                <select required id="Estado Civil" name="caso" class="form-control">
-                                    <option selected><?php echo $resultado['tipo_caso']; ?></option>
+                                <select required id="Estado Civil" name="caso" readonly="true" class="form-control">
+                                    <option ><?php echo $resultado['tipo_caso']; ?></option>
                                     <option >Direito Empresarial</option>
                                     <option >Direito da Tecnologia da Informação</option>
                                     <option >Direito do Consumidor</option>
@@ -63,11 +63,21 @@
                                     <option >Direito Familiar</option>
                                     <option >Outros</option>
                                 </select>
+                            </div>  --> 
+                           <div class="form-group">
+                                <div class="form-group col-md-6" >
+                                    <label for="inputPassword4" align="left">Tipo de Caso:</label>
+                                    <input id="cpf" name="TEXT" value="<?php echo $resultado['tipo_caso']; ?>" readonly="true"  class="form-control input-md" required="" type="text" >
+                                </div>
                             </div>
+                           
+                            
+                           
+                           
                             <div class="form-row">
 
                             </div> 
-
+                           
                             <div class="form-group col-md-6">
                                 <label for="comment">Descrição:</label>
                                 <textarea  class="form-control" rows="5"  name="descricao"id="comment"><?php echo $resultado['descricao'] ; ?></textarea>
@@ -81,7 +91,7 @@
                             <label class="col-md-2 control-label" for="Cadastrar"></label>
                             <div class="col-md-8">
                                 <button id="Cadastrar" name="Cadastrar" class="btn btn-success" type="Submit">Atualizar</button>
-                                <button id="Cancelar" name="Cancelar" class="btn btn-danger" type="Reset">Cancelar</button>
+                                <button id="Cancelar" name="Cancelar" onClick="history.go(-1)" class="btn btn-danger" type="Reset">Cancelar</button>
 
                             </div>
                             <br />

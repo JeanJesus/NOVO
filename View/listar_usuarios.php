@@ -61,7 +61,7 @@ $user =new Usuario(); ?>
                         <td><?php echo $value['email']; ?></td>                       
                         
                         <td>
-                               <?php echo "<a href='inicial.php?item=editar_item'?>Editar</a> "?>
+                               <?php echo "<a href='inicial.php?item=EditarUsuario&id=".$value['id']."'>Editar</a>"; ?>
                        </td>
                        <td>
                                <?php echo"<a href='inicial.php?item=DeletarUsuario&id=".$value['id'] ."' onclick='return confirm(\"Deseja realmente excluir?\")'>Deletar</a>";?>
