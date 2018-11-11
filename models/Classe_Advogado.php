@@ -1,5 +1,6 @@
 <?php
-    require_once 'Classe_Pessoa.php';
+
+require_once 'Classe_Pessoa.php';
 
 class Advogado extends Pessoa {
 
@@ -72,7 +73,8 @@ class Advogado extends Pessoa {
             echo "<script>window.location = '../View/inicial.php?item=CadastrarAdvogados';</script>";
         }
     }
-     public function ListarAdvogados() {
+
+    public function ListarAdvogados() {
 
         $conn = getConection();
         $sql = "SELECT *FROM $this->table";
@@ -80,19 +82,78 @@ class Advogado extends Pessoa {
         $stmt->execute();
         return $stmt->fetchAll();
     }
-       public function deletarAdvogado($id){
+
+    public function deletarAdvogado($id) {
         $conn = getConection();
         $sql = "DELETE FROM $this->table WHERE oab_numero = :id";
         $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':id',$id);
-           if($stmt->execute()){
+        $stmt->bindParam(':id', $id);
+        if ($stmt->execute()) {
             echo "<script>alert('Advogado Excluido com Sucesso!');</script>";
             echo "<script>window.location = '../View/inicial.php?item=Listar_Advogados';</script>";
-        }else{
+        } else {
             echo "<script>alert('Erro! o Advogado pode estar agendado em uma audiencia. Remova o cadastro na guia de CONSULTAR/AGENDAMENTOS para realizar o procedimento de Exclusão');</script>";
-            echo "<script>window.location = '../View/inicial.php?item=Listar_Advogados';</script>";           
+            echo "<script>window.location = '../View/inicial.php?item=Listar_Advogados';</script>";
         }
         return $stmt->execute();
+    }
+
+    public function EncontrarAdvogado($id) {
+        $conn = getConection();
+        $sql = "SELECT *FROM $this->table WHERE id_advogado = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+
+    public function atualizarAdvogado($id) {
+        //echo"estou recebendo $id";
+        $conn = getConection();
+        echo "ESTOU RECEBENDO O ID $id.";
+        // $sql ="UPDATE $this->table SET nome = :nome, cpf = :cpf, data_nascimento = :nascimento, rg = :rg, estado_civil = :estado_civil, telefone = :telefone, seccional = :seccional, oab_numero = :numero, data_expedicao = :data_expedicao, data_validade = :data_validade, tipo_caso = :tipo_caso WHERE id_advogado = :id"; 
+
+        $sql = "UPDATE $this->table
+         SET
+           nome = :nome,
+           cpf = :cpf,
+           data_nascimento = :nascimento,
+           rg = :rg,
+           estado_civil = :estado_civil,
+           telefone = :telefone,
+           seccional = :seccional,
+           oab_numero = :numero,
+           data_expedicao = :data_expedicao,
+           data_validade = :data_validade,
+           tipo_caso = :tipo
+         WHERE
+           id_advogado = $id";
+
+
+
+
+
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':nome', $this->nome);
+        $stmt->bindParam(':cpf', $this->cpf);
+        $stmt->bindParam(':nascimento', $this->data_nascimento);
+        $stmt->bindParam(':rg', $this->rg);
+        $stmt->bindParam(':estado_civil', $this->estado_civil);
+        $stmt->bindParam(':telefone', $this->telefone);
+        $stmt->bindParam(':seccional', $this->seccional);
+        $stmt->bindParam(':numero', $this->n_oab);
+        $stmt->bindParam(':data_expedicao', $this->data_expedicao);
+        $stmt->bindParam(':data_validade', $this->data_validade);
+        $stmt->bindParam(':tipo', $this->area_de_atuacao);
+        $stmt->bindParam(':id', $id);
+
+        if ($stmt->execute()) {
+            echo "<script>alert(' Advogado Atualizado com Sucesso!');</script>";
+            echo "<script>window.location = '../View/inicial.php?item=Listar_Advogados';</script>";
+        } else {
+            echo "<script>alert(' Não foi possivel realizar a atualização!');</script>";
+        }
     }
 
 }

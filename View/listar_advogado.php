@@ -80,7 +80,7 @@
                       <td><?php echo $value['data_expedicao'];  ?></td>
                       <td><?php echo $value['data_validade'];  ?></td>
                       <td>
-                               <?php echo "<a href='inicial.php?item=editar_item'?>Editar</a> "?>
+                          <?php echo "<a href='inicial.php?item=EditarAdvogado&id=".$value['id_advogado']."'>Editar</a>"; ?>
                        </td>
                        <td>
                                <?php echo"<a href='inicial.php?item=deletarAdvogado&id=".$value['oab_numero'] ."' onclick='return confirm(\"Deseja realmente excluir?\")'>Deletar</a>";?>

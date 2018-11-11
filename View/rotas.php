@@ -67,8 +67,8 @@ if($item =="editar_Cliente"){
       include_once "inicial.php";
 }
 $item = $_GET['item'];
-if($item =='EditarAdvogados'){
-    include_once ('../View/EditarAdvogados.php');
+if($item =='EditarAdvogado'){
+    include_once ('EditarAdvogados.php');
     }else{
       include_once "../View/inicial.php";
 }

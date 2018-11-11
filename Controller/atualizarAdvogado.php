@@ -1,8 +1,9 @@
 <?php
-    require_once '../models/Classe_Advogado.php';
+    $id = $_GET['id'];
+      require_once '../models/Classe_Advogado.php';
     
     $adv = new Advogado;
-    
+   // echo "ESTOU RECEBENDO O ID: $id ";
     $adv->setNome($_POST['NomeAdv']);
     $adv->setCpf($_POST['cpf']);
     $adv->setData_nascimento($_POST['dtnasc']);
@@ -14,6 +15,6 @@
     $adv->setData_expedicao($_POST['dtexped']);
     $adv->setData_validade($_POST['dtval']);
     $adv->setArea_de_atuacao($_POST['caso']);
-    $adv->inserAdvogado($adv);
-    echo var_dump($adv);
-    
+    $adv->atualizarAdvogado($id);
+
+  
