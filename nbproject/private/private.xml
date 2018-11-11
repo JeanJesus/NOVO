@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/FINAL/NOVO/View/listar_cliente.php</file>
-            <file>file:/var/www/html/FINAL/NOVO/View/Editar_Cliente.php</file>
-            <file>file:/var/www/html/FINAL/NOVO/models/Classe_Cliente.php</file>
-            <file>file:/var/www/html/FINAL/NOVO/Controller/atualizarCliente.php</file>
+            <file>file:/var/www/html/FINAL/NOVO/Controller/atualizarAdvogado.php</file>
+            <file>file:/var/www/html/FINAL/NOVO/View/EditarAdvogados.php</file>
+            <file>file:/var/www/html/FINAL/NOVO/View/listar_advogado.php</file>
+            <file>file:/var/www/html/FINAL/NOVO/View/CadastrarAdvogados.php</file>
+            <file>file:/var/www/html/FINAL/NOVO/models/Classe_Advogado.php</file>
         </group>
     </open-files>
 </project-private>

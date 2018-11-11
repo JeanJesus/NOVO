@@ -180,7 +180,7 @@
             echo "<script>alert(' Cliente Atualizado com Sucesso!');</script>";
             echo "<script>window.location = '../View/inicial.php?item=Listar_Clientes';</script>";
         }else{
-            echo "<script>alert(' Não foi possivel realiar a atualização!');</script>";
+            echo "<script>alert(' Não foi possivel realizar a atualização!');</script>";
         } 
         
                 

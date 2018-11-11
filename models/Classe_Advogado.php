@@ -110,7 +110,7 @@ class Advogado extends Pessoa {
     public function atualizarAdvogado($id) {
         //echo"estou recebendo $id";
         $conn = getConection();
-        echo "ESTOU RECEBENDO O ID $id.";
+      
         // $sql ="UPDATE $this->table SET nome = :nome, cpf = :cpf, data_nascimento = :nascimento, rg = :rg, estado_civil = :estado_civil, telefone = :telefone, seccional = :seccional, oab_numero = :numero, data_expedicao = :data_expedicao, data_validade = :data_validade, tipo_caso = :tipo_caso WHERE id_advogado = :id"; 
 
         $sql = "UPDATE $this->table

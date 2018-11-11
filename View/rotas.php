@@ -73,12 +73,12 @@ if($item =='EditarAdvogado'){
       include_once "../View/inicial.php";
 }
 
-$item = $_GET['item'];
+/*$item = $_GET['item'];
 if($item =='editar_item'){
     include_once ('../View/Editar_Cliente.php');
     }else{
-      include_once "../View/inicial.php";
-}
+      include_once "../View/inicial.php";";
+} */
 
 
 $item = $_GET['item'];
@@ -110,6 +110,12 @@ if($item =='DeletarUsuario'){
 
 
 
+$item = $_GET['item'];
+if($item =='EditarAgendamento'){
+    include_once ('Editar_Agendamento.php');
+    }else{
+      include_once "../View/inicial.php";
+}
 
 
 

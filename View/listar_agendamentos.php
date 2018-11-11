@@ -64,7 +64,7 @@
                       <td><?php echo $value['tipo_caso'];  ?></td>
                       <td><?php echo $value['descricao'];  ?></td>
                       <td>
-                               <?php echo "<a href='inicial.php?item=editar_item'?>Editar</a> "?>
+                               <?php echo "<a href='inicial.php?item=EditarAgendamento&id=".$value['id_agendamento']."'>Editar</a>"; ?>
                        </td>
                        <td>
                                <?php echo"<a href='inicial.php?item=DeletarAgendamento&id=".$value['id_agendamento'] ."' onclick='return confirm(\"Deseja realmente excluir?\")'>Deletar</a>";?>

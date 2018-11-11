@@ -62,7 +62,7 @@
      public function ListarAgendamento() {
 
         $conn = getConection();
-        $sql = "SELECT *FROM tbl_003_agendamentos INNER JOIN tbl_001_clientes ON tbl_001_clientes.cpf = tbl_003_agendamentos.fk_cpf_cliente "
+        $sql = "SELECT *FROM $this->table INNER JOIN tbl_001_clientes ON tbl_001_clientes.cpf = tbl_003_agendamentos.fk_cpf_cliente "
                 . "INNER JOIN tbl_002_advogados ON tbl_002_advogados.oab_numero = tbl_003_agendamentos.fk_oab_advogado";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
@@ -104,4 +104,41 @@
         }
         return $stmt->execute();
     }
-}
+
+      public function EncontrarAgendamento($id){
+        $conn = getConection();
+        $sql = "SELECT *FROM $this->table WHERE id_agendamento = :id";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':id',$id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch();
+      
+    }
+    
+     public function AtualizarAgendamento($id){
+       $conn = getConection();
+        $sql = "UPDATE $this->table SET data_audiencia = :data_audiencia, horario = :horario, tipo_caso = :caso, descricao = :desc WHERE id_agendamento = :id";
+        $stmt = $conn->prepare($sql);
+        
+        $stmt->bindParam(':data_audiencia', $this->getDataAudiencia());
+        $stmt->bindParam(':horario',  $this->getHorario());
+        $stmt->bindParam(':caso', $this->getTipoCaso());
+        $stmt->bindValue(':desc', $this->getDescricao());
+        $stmt->bindValue(':id', $id);
+        
+         if($stmt->execute()){
+            echo "<script>alert(' Agendamento Atualizado com Sucesso!');</script>";
+            echo "<script>window.location = '../View/inicial.php?item=Listar_Agendamentos';</script>";
+        }else{
+            echo "<script>alert(' Não foi possivel realizar a atualização!');</script>";
+        } 
+        
+                
+         
+        
+    }
+    
+    
+    
+    
+ }

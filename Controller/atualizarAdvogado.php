@@ -3,7 +3,7 @@
       require_once '../models/Classe_Advogado.php';
     
     $adv = new Advogado;
-   // echo "ESTOU RECEBENDO O ID: $id ";
+   
     $adv->setNome($_POST['NomeAdv']);
     $adv->setCpf($_POST['cpf']);
     $adv->setData_nascimento($_POST['dtnasc']);
