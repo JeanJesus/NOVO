@@ -18,15 +18,15 @@
       <div class="card card-register mx-auto mt-5">
         <div class="card-header" align="center">Registrar Usuário</div>
         <div class="card-body">
-            
+
              <?php   if(isset($_GET['item'])){
                   $id = $_GET['id'];
-                 
+
                   $resultado = $user->EncontrarUsuario($id);
-                  
-             ?>  
-            
-            <form method="post" name='f1'  action="../Controller/atualizarUsuario.php?id=<?php echo "$id"; ?>"> 
+
+             ?>
+
+            <form method="post" name='f1'  action="../Controller/atualizarUsuario.php?id=<?php echo "$id"; ?>">
             <div class="form-group">
               <div class="form-row">
                 <div class="col-md-6">
@@ -66,9 +66,9 @@
               </div>
             </div>
 
-                <input type="button" class="btn btn-primary btn-block" value="Comparar Senhas" onClick="validarSenha()">
+                <input type="button" class="btn btn-primary btn-block" value="Comparar Senhas" disabled onClick="validarSenha()">
 
-                <input type="submit" class="btn btn-primary btn-block" value="Registrar">
+                <input type="submit" class="btn btn-primary btn-block" value="Atualizar">
           </form>
         <?php } ?>
         </div>
